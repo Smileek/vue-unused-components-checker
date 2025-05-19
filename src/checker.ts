@@ -28,7 +28,7 @@ export default function (src, maxOpenFiles, ignore): void {
         function (file, index, cb) {
           spinner.text = 'Checking for unused Components: ' + file;
           textSearch
-            .findAsPromise(new RegExp(getCheckExpression(file), 'i'), ['**/*.{js,jsx,ts,tsx}', '**/*.vue'], {
+            .findAsPromise(new RegExp(getCheckExpression(file), 'si'), ['**/*.{js,jsx,ts,tsx}', '**/*.vue'], {
               cwd: src,
               ignore: ignore,
             })
